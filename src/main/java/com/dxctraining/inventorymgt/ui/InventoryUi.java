@@ -5,6 +5,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.dxctraining.inventorymgt.item.entities.Item;
+import com.dxctraining.inventorymgt.item.service.IItemService;
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 import com.dxctraining.inventorymgt.supplier.exceptions.InvalidSupplierArgumentException;
 import com.dxctraining.inventorymgt.supplier.exceptions.SupplierNullException;
@@ -15,6 +17,9 @@ public class InventoryUi {
 	
 	@Autowired
 	private ISupplierService supplierService;
+	@Autowired
+	private IItemService itemService;
+	
 	
 	
 	@PostConstruct
@@ -26,6 +31,13 @@ public class InventoryUi {
 			supplierService.addSupplier(supplier2);
 			Supplier supplier3 = new Supplier("harsha");
 			supplierService.addSupplier(supplier3);
+			
+			Item item1 = new Item("watch", supplier1);
+			itemService.addItem(item1);
+			Item item2 = new Item("phone", supplier2);
+			itemService.addItem(item2);
+			Item item3 = new Item("computer", supplier3);
+			itemService.addItem(item3);
 			
 			
 			
@@ -39,6 +51,18 @@ public class InventoryUi {
 			int id3 = supplier3.getId();
 			supplierService.removeSupplier(id3);
 			System.out.println("removed id"+id3);
+			
+
+			System.out.println("******Fetching item by id******");
+			int itemid1 = item1.getId();
+			Item itemfetched = itemService.findById(itemid1);
+			System.out.println("fetched item id is "+itemfetched.getId()+" fetched item name is "+itemfetched.getName());
+			
+			
+			System.out.println("*****Deleting an item******");
+			int itemid3 = item3.getId();
+			itemService.removeItem(itemid3);
+			System.out.println("removed item id is "+itemid3);
 			
 			
 			
