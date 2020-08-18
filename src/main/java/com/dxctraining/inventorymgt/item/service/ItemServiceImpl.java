@@ -1,5 +1,6 @@
 package com.dxctraining.inventorymgt.item.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +34,7 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public Item addItem(Item item) {
 		validateItem(item);
-		dao.addItem(item);
+		item = dao.addItem(item);
 		return item;
 	}
 
@@ -47,7 +48,7 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public Item updateItem(Item item) {
 		validateItem(item);
-		dao.updateItem(item);
+		item = dao.updateItem(item);
 		return item;
 	}
 

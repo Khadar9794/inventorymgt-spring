@@ -1,5 +1,8 @@
 package com.dxctraining.inventorymgt.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,28 +20,30 @@ public class InventoryUi {
 	
 	@Autowired
 	private ISupplierService supplierService;
+	
 	@Autowired
 	private IItemService itemService;
-	
-	
 	
 	@PostConstruct
 	public void runUi() {
 		try {
-			Supplier supplier1 = new Supplier("khadar");
+			List<Item> list = new ArrayList<>();
+			Supplier supplier1 = new Supplier("fazil");
 			supplierService.addSupplier(supplier1);
-			Supplier supplier2 = new Supplier("subhani");
+			Supplier supplier2 = new Supplier("adil");
 			supplierService.addSupplier(supplier2);
-			Supplier supplier3 = new Supplier("harsha");
+			Supplier supplier3 = new Supplier("mustaq");
 			supplierService.addSupplier(supplier3);
 			
-			Item item1 = new Item("watch", supplier1);
+			Item item1 = new Item("phone", supplier1);
+			list.add(item1);
 			itemService.addItem(item1);
-			Item item2 = new Item("phone", supplier2);
+			Item item2 = new Item("Computer", supplier2);
+			list.add(item2);
 			itemService.addItem(item2);
-			Item item3 = new Item("computer", supplier3);
+			Item item3 = new Item("laptop", supplier3);
+			list.add(item3);
 			itemService.addItem(item3);
-			
 			
 			
 			System.out.println("*****Fetching supplier by id*****");
@@ -47,12 +52,6 @@ public class InventoryUi {
 			System.out.println("fetched id is "+fetched.getId()+" fetched supplier = "+fetched.getName());
 			
 			
-			System.out.println("*****Deleting a supplier*****");
-			int id3 = supplier3.getId();
-			supplierService.removeSupplier(id3);
-			System.out.println("removed id"+id3);
-			
-
 			System.out.println("******Fetching item by id******");
 			int itemid1 = item1.getId();
 			Item itemfetched = itemService.findById(itemid1);
@@ -63,8 +62,6 @@ public class InventoryUi {
 			int itemid3 = item3.getId();
 			itemService.removeItem(itemid3);
 			System.out.println("removed item id is "+itemid3);
-			
-			
 			
 			
 		}catch (InvalidSupplierArgumentException e) {

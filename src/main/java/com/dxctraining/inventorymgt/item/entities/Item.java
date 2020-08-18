@@ -1,20 +1,24 @@
 package com.dxctraining.inventorymgt.item.entities;
 
-import javax.persistence.Entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Item {
 	
 	@Id
 	@GeneratedValue
 	private int id;
 	private String name;
+	
 	@ManyToOne
 	private Supplier supplier;
 	
