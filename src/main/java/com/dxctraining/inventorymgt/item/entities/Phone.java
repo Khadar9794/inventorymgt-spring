@@ -1,14 +1,17 @@
 package com.dxctraining.inventorymgt.item.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public class Phone extends Item {
+	
+	@Id
+	@GeneratedValue
+	private int id;
 	private int storagesize;
 	
 	public Phone() {
@@ -18,6 +21,14 @@ public class Phone extends Item {
 	public Phone(String name, Supplier supplier, int storagesize) {
 		super(name, supplier);
 		this.storagesize = storagesize;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getStoragesize() {

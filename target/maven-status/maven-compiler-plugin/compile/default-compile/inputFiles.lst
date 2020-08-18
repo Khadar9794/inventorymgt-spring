@@ -1,5 +1,7 @@
 C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\item\dao\IItemDao.java
 C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\item\exceptions\ItemNullException.java
+C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\item\entities\Computer.java
+C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\item\entities\Phone.java
 C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\item\dao\ItemDaoImpl.java
 C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\supplier\entities\Supplier.java
 C:\Users\sshaik95\workspace\inventorymgt\src\main\java\com\dxctraining\inventorymgt\supplier\service\SupplierServiceImpl.java

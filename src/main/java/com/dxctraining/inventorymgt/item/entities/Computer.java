@@ -1,14 +1,18 @@
 package com.dxctraining.inventorymgt.item.entities;
 
+
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
-@Inheritance (strategy = InheritanceType.JOINED)
 @Entity
 public class Computer extends Item {
+	
+	@Id
+	@GeneratedValue
+	private int id;
 	private int discsize;
 	
 	public Computer() {
@@ -17,6 +21,13 @@ public class Computer extends Item {
 	public Computer(String name, Supplier supplier, int discsize) {
 		super(name, supplier);
 		this.discsize = discsize;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getDiscsize() {
 		return discsize;
