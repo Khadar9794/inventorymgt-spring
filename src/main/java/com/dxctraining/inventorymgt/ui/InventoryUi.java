@@ -28,20 +28,20 @@ public class InventoryUi {
 	public void runUi() {
 		try {
 			List<Item> list = new ArrayList<>();
-			Supplier supplier1 = new Supplier("fazil");
+			Supplier supplier1 = new Supplier("khadar");
 			supplierService.addSupplier(supplier1);
-			Supplier supplier2 = new Supplier("adil");
+			Supplier supplier2 = new Supplier("subhani");
 			supplierService.addSupplier(supplier2);
-			Supplier supplier3 = new Supplier("mustaq");
+			Supplier supplier3 = new Supplier("harsha");
 			supplierService.addSupplier(supplier3);
 			
-			Item item1 = new Item("phone", supplier1);
+			Item item1 = new Item("watch", supplier1);
 			list.add(item1);
 			itemService.addItem(item1);
-			Item item2 = new Item("Computer", supplier2);
+			Item item2 = new Item("ac", supplier2);
 			list.add(item2);
 			itemService.addItem(item2);
-			Item item3 = new Item("laptop", supplier3);
+			Item item3 = new Item("tv", supplier3);
 			list.add(item3);
 			itemService.addItem(item3);
 			
