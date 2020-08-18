@@ -29,15 +29,17 @@ public class InventoryUi {
 			
 			
 			
+			System.out.println("*****Fetching supplier by id*****");
+			int id1 = supplier1.getId();
+			Supplier fetched = supplierService.findById(id1);
+			System.out.println("fetched id is "+fetched.getId()+" fetched supplier = "+fetched.getName());
+			
+			
 			System.out.println("*****Deleting a supplier*****");
 			int id3 = supplier3.getId();
 			supplierService.removeSupplier(id3);
 			System.out.println("removed id"+id3);
 			
-			System.out.println("*****Fetching supplier by id*****");
-			int id1 = supplier1.getId();
-			Supplier fetched = supplierService.findById(id1);
-			System.out.println("fetched id is "+fetched.getId()+" fetched supplier = "+fetched.getName());
 			
 			
 			
