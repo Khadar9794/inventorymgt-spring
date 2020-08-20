@@ -15,7 +15,7 @@ import com.dxctraining.inventorymgt.supplier.exceptions.SupplierNullException;
 @Transactional
 @Service
 public class SupplierServiceImpl implements ISupplierService {
-	
+
 	@Autowired
 	private ISupplierDao dao;
 
@@ -27,10 +27,10 @@ public class SupplierServiceImpl implements ISupplierService {
 	}
 
 	private void validateSupplier(Supplier supplier) {
-		if(supplier == null) {
+		if (supplier == null) {
 			throw new SupplierNullException("supplier is null");
 		}
-		
+
 	}
 
 	@Override
@@ -48,22 +48,23 @@ public class SupplierServiceImpl implements ISupplierService {
 	}
 
 	private void validateId(int id) {
-		if(id == 0) {
+		if (id == 0) {
 			throw new InvalidSupplierArgumentException("id should not be null");
 		}
-		
+
 	}
+
 	@Override
 	public void removeSupplier(int id) {
 		validateId(id);
 		dao.removeSupplier(id);
-		
+
 	}
-	
+
 	@Override
 	public List<Supplier> listAll() {
-		List<Supplier>listAll= dao.listAll();
+		List<Supplier> listAll = dao.listAll();
 		return listAll;
 	}
-	
+
 }

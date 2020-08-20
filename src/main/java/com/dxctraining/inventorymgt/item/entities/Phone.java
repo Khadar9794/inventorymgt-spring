@@ -9,16 +9,16 @@ import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 @Entity
 public class Phone extends Item {
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
 	private int storagesize;
-	
+
 	public Phone() {
-		
+
 	}
-	
+
 	public Phone(String name, Supplier supplier, int storagesize) {
 		super(name, supplier);
 		this.storagesize = storagesize;
@@ -39,7 +39,5 @@ public class Phone extends Item {
 	public void setStoragesize(int storagesize) {
 		this.storagesize = storagesize;
 	}
-	
-	
 
 }

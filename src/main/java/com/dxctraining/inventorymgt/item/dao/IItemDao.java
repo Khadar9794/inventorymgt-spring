@@ -12,7 +12,8 @@ public interface IItemDao {
 	Item addItem(Item item);
 	Item updateItem(Item item);
 	void removeItem(int id);
-	List<Item> listAll();
+	List<Computer> computerlist();
+	List<Phone> phonelist();
 	
 
 }

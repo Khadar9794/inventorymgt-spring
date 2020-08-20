@@ -20,13 +20,13 @@ import com.dxctraining.inventorymgt.supplier.service.ISupplierService;
 
 @Component
 public class InventoryUi {
-	
+
 	@Autowired
 	private ISupplierService supplierService;
-	
+
 	@Autowired
 	private IItemService itemService;
-	
+
 	@PostConstruct
 	public void runUi() {
 		try {
@@ -37,7 +37,7 @@ public class InventoryUi {
 			supplierService.addSupplier(supplier2);
 			Supplier supplier3 = new Supplier("harsha");
 			supplierService.addSupplier(supplier3);
-			
+
 			Item item1 = new Item("watch", supplier1);
 			list.add(item1);
 			itemService.addItem(item1);
@@ -47,42 +47,37 @@ public class InventoryUi {
 			Item item3 = new Item("tv", supplier3);
 			list.add(item3);
 			itemService.addItem(item3);
-			
-			
+
 			Phone item4 = new Phone("realme", supplier1, 128);
 			list.add(item4);
 			itemService.addItem(item4);
-			
-			
-			Computer item5 = new Computer("asus",supplier2,500);
+
+			Computer item5 = new Computer("asus", supplier2, 500);
 			list.add(item5);
 			itemService.addItem(item5);
-			
-			
+
 			System.out.println("*****Fetching supplier by id*****");
 			int id1 = supplier1.getId();
 			Supplier fetched = supplierService.findById(id1);
-			System.out.println("fetched id is "+fetched.getId()+" fetched supplier = "+fetched.getName());
-			
-			
+			System.out.println("fetched id is " + fetched.getId() + " fetched supplier = " + fetched.getName());
+
 			System.out.println("******Fetching item by id******");
 			int itemid1 = item1.getId();
 			Item itemfetched = itemService.findById(itemid1);
-			System.out.println("fetched item id is "+itemfetched.getId()+" fetched item name is "+itemfetched.getName());
-			
-			
+			System.out.println(
+					"fetched item id is " + itemfetched.getId() + " fetched item name is " + itemfetched.getName());
+
 			System.out.println("*****Deleting an item******");
 			int itemid3 = item3.getId();
 			itemService.removeItem(itemid3);
-			System.out.println("removed item id is "+itemid3);
-			
-			
-		}catch (InvalidSupplierArgumentException e) {
+			System.out.println("removed item id is " + itemid3);
+
+		} catch (InvalidSupplierArgumentException e) {
 			e.printStackTrace();
-		}catch (SupplierNullException e) {
+		} catch (SupplierNullException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

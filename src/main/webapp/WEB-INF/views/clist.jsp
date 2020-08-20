@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,19 +10,20 @@
 </head>
 <body>
 
-	<h1>Listing all Computers</h1>
+<h1>Listing all Computer</h1>
 
 
-	<c:forEach items="${computers}" var="computer">
+<c:forEach items="${computers}"  var="computer">
 
-		<c:out value="${computer.name}" />
+id is <c:out value="${computer.id}"  />
+<br>
 
-		<c:out value="${computer.id}" />
+name is <c:out value="${computer.name}"  />
+<br>
+disc size is <c:out value="${computer.discsize}"  />
 
-		<c:out value="${computer.diskSize}" />
-		<br>
-
-	</c:forEach>
+<br>
+</c:forEach>
 
 </body>
 </html>

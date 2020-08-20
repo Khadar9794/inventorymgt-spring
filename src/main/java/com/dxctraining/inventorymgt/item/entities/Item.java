@@ -1,6 +1,5 @@
 package com.dxctraining.inventorymgt.item.entities;
 
-
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -14,19 +13,19 @@ import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Item {
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
 	private String name;
-	
+
 	@ManyToOne
 	private Supplier supplier;
-	
+
 	public Item() {
-		
+
 	}
-	
+
 	public Item(String name, Supplier supplier) {
 		this.name = name;
 		this.supplier = supplier;
@@ -55,22 +54,23 @@ public class Item {
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
+
 	@Override
 	public int hashCode() {
 		return id;
 	}
-	
+
 	@Override
 	public boolean equals(Object o) {
-		if(this == o) {
+		if (this == o) {
 			return true;
 		}
-		if(o == null || !(o instanceof Item)) {
+		if (o == null || !(o instanceof Item)) {
 			return false;
 		}
-		Item that = (Item)o;
+		Item that = (Item) o;
 		boolean isequals = this.id == that.id;
 		return isequals;
-		
+
 	}
 }

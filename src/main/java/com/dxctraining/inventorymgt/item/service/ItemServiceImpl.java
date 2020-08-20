@@ -1,25 +1,24 @@
 package com.dxctraining.inventorymgt.item.service;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dxctraining.inventorymgt.item.dao.IItemDao;
+import com.dxctraining.inventorymgt.item.entities.Computer;
 import com.dxctraining.inventorymgt.item.entities.Item;
+import com.dxctraining.inventorymgt.item.entities.Phone;
 import com.dxctraining.inventorymgt.item.exceptions.InvalidItemArgumentException;
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 @Transactional
 @Service
 public class ItemServiceImpl implements IItemService {
-	
+
 	@Autowired
 	private IItemDao dao;
-	
+
 	@Override
 	public Item findById(int id) {
 		validateId(id);
@@ -28,12 +27,11 @@ public class ItemServiceImpl implements IItemService {
 	}
 
 	private void validateId(int id) {
-		if(id == 0) {
+		if (id == 0) {
 			throw new InvalidItemArgumentException("id should not be null");
 		}
-		
-	}
 
+	}
 
 	@Override
 	public Item addItem(Item item) {
@@ -43,10 +41,10 @@ public class ItemServiceImpl implements IItemService {
 	}
 
 	private void validateItem(Item item) {
-		if(item == null) {
+		if (item == null) {
 			throw new InvalidItemArgumentException("item is invalid");
 		}
-		
+
 	}
 
 	@Override
@@ -59,12 +57,19 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public void removeItem(int id) {
 		dao.removeItem(id);
-		
+
 	}
+
 	@Override
-	public List<Item> listAll() {
-		List<Item>listAll= dao.listAll();
-		return listAll;
+	public List<Computer> computerlist() {
+		List<Computer> list = dao.computerlist();
+		return list;
+	}
+
+	@Override
+	public List<Phone> phonelist() {
+		List<Phone> list = dao.phonelist();
+		return list;
 	}
 
 }

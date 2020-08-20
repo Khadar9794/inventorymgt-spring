@@ -9,6 +9,7 @@ public interface ISupplierService {
 	Supplier updateSupplier(Supplier supplier);
 	Supplier findById(int id);
 	void removeSupplier(int id);
+
 	List<Supplier> listAll();
 	
 	

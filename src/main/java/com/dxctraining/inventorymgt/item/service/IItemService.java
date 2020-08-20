@@ -9,13 +9,15 @@ import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 public interface IItemService {
 	Item findById(int id);
-	Item addItem(Item item);
-	Item updateItem(Item item);
-	void removeItem(int id);
-	List<Item> listAll();
-	
-	
 
-	
+	Item addItem(Item item);
+
+	Item updateItem(Item item);
+
+	void removeItem(int id);
+
+	List<Computer> computerlist();
+
+	List<Phone> phonelist();
 
 }

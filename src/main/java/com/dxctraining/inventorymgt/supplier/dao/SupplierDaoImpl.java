@@ -13,14 +13,14 @@ import com.dxctraining.inventorymgt.supplier.exceptions.SupplierNullException;
 
 @Repository
 public class SupplierDaoImpl implements ISupplierDao {
-	
+
 	@PersistenceContext
 	private EntityManager entitymanager;
-	
+
 	@Override
 	public Supplier findById(int id) {
 		Supplier supplier = entitymanager.find(Supplier.class, id);
-		if(supplier == null) {
+		if (supplier == null) {
 			throw new SupplierNullException("Supplier is null");
 		}
 		return supplier;
@@ -42,16 +42,15 @@ public class SupplierDaoImpl implements ISupplierDao {
 	public void removeSupplier(int id) {
 		Supplier supplier = findById(id);
 		entitymanager.remove(supplier);
-		
+
 	}
 
 	@Override
 	public List<Supplier> listAll() {
 		String jpaql = "from Supplier";
-		TypedQuery<Supplier>query=entitymanager.createQuery(jpaql, Supplier.class);
-		List<Supplier>listAll=query.getResultList();
+		TypedQuery<Supplier> query = entitymanager.createQuery(jpaql, Supplier.class);
+		List<Supplier> listAll = query.getResultList();
 		return listAll;
 	}
-
 
 }
