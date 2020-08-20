@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
  * 3) @AutoConfiguration so we dont have to provide on our own
  */
 @SpringBootApplication
-public class ProjectMain {
+public class ProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectMain.class, args);
+		SpringApplication.run(ProjectApplication.class, args);
 
 	}
 
