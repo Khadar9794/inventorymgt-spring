@@ -1,12 +1,16 @@
 package com.dxctraining.inventorymgt.item.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dxctraining.inventorymgt.item.entities.Item;
 import com.dxctraining.inventorymgt.item.exceptions.ItemNullException;
+import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 @Repository
 public class ItemDaoImpl implements IItemDao{
@@ -41,6 +45,16 @@ public class ItemDaoImpl implements IItemDao{
 		em.remove(item);
 		
 	}
+	
+	@Override
+	public List<Item> listAll() {
+		String jpaql = "from Item";
+		TypedQuery<Item>query=em.createQuery(jpaql, Item.class);
+		List<Item>listAll=query.getResultList();
+		return listAll;
+	}
+
+
 	
 
 }

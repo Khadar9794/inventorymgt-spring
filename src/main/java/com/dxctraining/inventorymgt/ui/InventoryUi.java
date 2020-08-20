@@ -54,7 +54,7 @@ public class InventoryUi {
 			itemService.addItem(item4);
 			
 			
-			Computer item5 = new Computer("asus",supplier1,500);
+			Computer item5 = new Computer("asus",supplier2,500);
 			list.add(item5);
 			itemService.addItem(item5);
 			
