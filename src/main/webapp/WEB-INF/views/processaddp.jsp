@@ -10,15 +10,14 @@
 </head>
 <body>
 
-<h1>Supplier Details </h1>
+<h1>Phone Details </h1>
 
-id is <c:out value="${supplier.id}"  />
+id is <c:out value="${phone.id}"  />
 <br>
-name is <c:out value="${supplier.name}"  />
+name is <c:out value="${phone.name}"  />
 <br>
+storage size is <c:out value="${phone.storagesize}"  />
 
-
-<a href="/logout"> Log out </a>
-
+<br>
 </body>
 </html>

@@ -10,15 +10,14 @@
 </head>
 <body>
 
-<h1>Supplier Details </h1>
+<h1>Computer Details </h1>
 
-id is <c:out value="${supplier.id}"  />
+id is <c:out value="${computer.id}"  />
 <br>
-name is <c:out value="${supplier.name}"  />
+name is <c:out value="${computer.name}"  />
 <br>
+disc size is <c:out value="${computer.discsize}"  />
 
-
-<a href="/logout"> Log out </a>
-
+<br>
 </body>
 </html>
