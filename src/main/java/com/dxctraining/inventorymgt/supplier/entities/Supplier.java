@@ -19,17 +19,6 @@ public class Supplier {
 	private String name;
 	private String password;
 	
-	@OneToMany(mappedBy = "supplier")
-	private Set<Item> item;
-	
-	public Set<Item> getItems(){
-		return item;
-	}
-	
-	public void setItems(Set<Item> item) {
-		this.item = item;
-	}
-	
 	public Supplier(String name, String password) {
 		this.name = name;
 		this.password = password;
